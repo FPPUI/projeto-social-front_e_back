@@ -1,0 +1,5 @@
+/node_modules
+./Pessoa.js
+./tst.js
+/src/database/database.db
+/src/database/database.sqlite

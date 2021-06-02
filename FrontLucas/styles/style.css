@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+    font-weight: normal;
+    border: none;
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.cabecalho {
+    width: 100%;
+    background-color: rgb(195, 226, 252);
+    padding: 20px 8%;
+    float: left;
+}
+
+.cabecalho li {
+    float: right;
+    margin-top: 5px;
+}
+
+.cabecalho li a {
+    display: flex;
+    width: 120px;
+    height: 40px;
+    background-color: #008dc0;
+    color: #ffffff;
+    margin-right: 25px ;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.cabecalho .slogan a {
+    width: 221px;
+    height: 48px;
+    background: url(../img/slogan.png) no-repeat;
+    float: left;
+}
+
+.inicio-forms {
+    background-color: rgb(33, 35, 36);
+    width: 100%;
+    padding: 15px;
+    float: left;
+}
+
+.inicio-forms p {
+    color: #ffffff;
+    text-align: center;
+}
+
+.tabela-container{
+    margin: 0;
+    padding: 20px;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.tabela td, .tabela th {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.tabela th {
+    background-color: #0492c2;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+input[type=text] {
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=text]:first-child {
+    margin: 0px;
+}
+
+input[type=submit] {
+  width: 120px;
+  background-color: #008dc0;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
