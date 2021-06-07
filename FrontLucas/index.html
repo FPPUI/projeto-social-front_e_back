@@ -41,14 +41,14 @@
 
     <div class="popup" id="popup">
         <div class="popup_cabeça">
-            <div class="popup_titulo">Cadastrar Novo Player</div>
+            <div class="popup_titulo">Cadastrar Novo Aluno</div>
             <button data-close_popup class="close_popup" onclick="cba()">&times;</button>
         </div>
 
         <div class="content_popup">
-            <form action="/action_page.php" method="POST">
-                <input type="text" class="" name="" placeholder="Matrícula">
-                <input type="text" class="" name="" placeholder="Nome Completo">
+            <form action="http://localhost:3000/aluno/create" method="POST" enctype="application/json" class="cadast">
+                <input type="text" class="cadastrar_" name="matricula" placeholder="Matrícula">
+                <input type="text" class="" name="nome" placeholder="Nome Completo">
                 <input type="text" class="" name="" placeholder="Endereço">
                 <input type="text" class="" name="" placeholder="Nacionalidade">
                 <input type="text" class="" name="" placeholder="Estados">
@@ -67,7 +67,7 @@
         <table class="tabela">
         </table>
     </div>
-    
+
     
 </body>
 <script type="text/javascript" src="js/main.js"></script>

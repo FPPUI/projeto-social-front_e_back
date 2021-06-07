@@ -13,7 +13,7 @@ const responsavel_controller = new cadastro_responsavel()
 
 const cadastro_juridico = require('./controllers/ClienteController').default
 const juridico_controller = new cadastro_juridico()
- 
+
  
 router.get('/advogado/showall', advogado_controller.showall)
 router.get('/advogado/showbyid/:id', advogado_controller.showbyid)

@@ -6,7 +6,7 @@
     transition: 200ms ease-in-out;
     border: 2px solid black;
     border-radius: 12px;
-    background-color: orange;
+    background-color: rgb(195, 226, 252);
     width: 600px;
     z-index: 10;
     max-width: 80%;

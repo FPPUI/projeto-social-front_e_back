@@ -74,13 +74,14 @@ a {
 
 }
 
-.tabela td, .tabela th {
+.tabela, td, .tabela th{  /*td*/
     padding: 12px 15px;
     border: 1px solid #ddd;
     text-align: center;
 }
 
-.tabela th {
+
+.tabela th{
     background-color: #0492c2;
     color: #ffffff;
     font-weight: bold;
@@ -93,7 +94,17 @@ input[type=text] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  text-align: center;
 }
+.input_dados input {
+    width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+  }
 
 input[type=text]:first-child {
     margin: 0px;

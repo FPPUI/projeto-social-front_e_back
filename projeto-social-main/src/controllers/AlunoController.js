@@ -5,7 +5,7 @@ const Aluno = require('../database/models/Aluno')(connection, DataTypes)
 class AlunoController {
     async cadastrar(req, res){
         try {
-
+            console.log(req.body)
             const {matricula, nome, endereco, telefone, nacionalidade, estado, cidade, nascimento, sexo, obs} = req.body
 
             const student = await Aluno.create({matricula, nome, endereco, telefone, nacionalidade, estado, cidade, nascimento, sexo, obs})
@@ -21,9 +21,9 @@ class AlunoController {
         try {
 
             const {id} = req.params
-
+            console.log(req.params)
             const {matricula, nome, endereco, telefone, nacionalidade, estado, cidade, nascimento, sexo, obs} = req.body
-
+            console.log(req.body)
             const student = await Aluno.update({matricula, nome, endereco, telefone, nacionalidade, estado, cidade, nascimento, sexo, obs},
                 {where:{
                     id

@@ -1,5 +1,8 @@
 var tipo_input;
 var ip_back = "localhost" //"26.202.5.175"
+/*
+var formData = $("form.cadast").serializeObject();
+console.log(formData);*/
 
 async function filtrar_aluno(nome){
 
@@ -22,7 +25,7 @@ async function filtrar_advogado(nome){
 async function filtrar_cliente(nome){
 
     const response = await fetch(`http://${ip_back}:3000/cliente/getbyname/${nome}`) 
-    const response_advogado = await fetch('http://${ip_back}:3000/advogado/showall')
+    const response_advogado = await fetch(`http://${ip_back}:3000/advogado/showall`)
     const data = await response.json()
     const data_advogado = await response_advogado.json()
 
@@ -33,7 +36,7 @@ async function filtrar_cliente(nome){
 async function filtrar_resp(nome){
 
     const response = await fetch(`http://${ip_back}:3000/responsavel/getbyname/${nome}`) 
-    const response_aluno = await fetch('http://${ip_back}:3000/aluno/showall')
+    const response_aluno = await fetch(`http://${ip_back}:3000/aluno/showall`)
     const data = await response.json()
     const data_aluno = await response_aluno.json()
 
@@ -66,7 +69,7 @@ async function filtrar_advogado_matricula(nome){
 async function filtrar_cliente_matricula(nome){
 
     const response = await fetch(`http://${ip_back}:3000/cliente/getbyprocesso/${nome}`) 
-    const response_advogado = await fetch('http://${ip_back}:3000/advogado/showall')
+    const response_advogado = await fetch(`http://${ip_back}:3000/advogado/showall`)
     const data = await response.json()
     const data_advogado = await response_advogado.json()
 
@@ -78,7 +81,7 @@ async function filtrar_cliente_matricula(nome){
 async function filtrar_resp_matricula(nome){
 
     const response = await fetch(`http://${ip_back}:3000/aluno/getbymatricula/${nome}`)
-    const response_resp = await fetch('http://${ip_back}:3000/responsavel/showall')
+    const response_resp = await fetch(`http://${ip_back}:3000/responsavel/showall`)
     const data = await response.json()
     const data_resp = await response_resp.json()
 

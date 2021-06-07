@@ -14,3 +14,6 @@ function cba(){
     console.log("aaaA")
 }
 
+function cadastrar(){
+    console.log("Matheus Piro")
+}
