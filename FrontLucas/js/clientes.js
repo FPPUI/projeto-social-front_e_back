@@ -12,6 +12,9 @@ async function clienteshowall(){
         document.querySelector('.input').value = ""
         document.querySelector('.matricula').value = ""
 
+        var iframe_popup = document.querySelector('.iframe_popup')
+        iframe_popup.src = `./pages/clientes.html`
+
         cliente_mostrar(data.client, data_advogado.lawer)
 
     } catch (error) {

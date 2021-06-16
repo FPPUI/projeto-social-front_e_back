@@ -39,10 +39,11 @@ class AlunoController {
         try {
 
             const {id} = req.params
-
+            console.log(req.params)
+            console.log(id)
             const student = await Aluno.destroy({
                 where:{
-                    id
+                    id:id
                 }})
             res.status(200).json({student})
 

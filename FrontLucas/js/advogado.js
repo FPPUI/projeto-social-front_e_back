@@ -2,13 +2,16 @@ async function advogadoshowall(){
     try {
         const response = await fetch(`http://${ip_back}:3000/advogado/showall`)
         const data = await response.json()
-        
+
         document.querySelector('.titulo_pag').innerHTML = "Consulta de Advogados"
         document.querySelector('.matricula').placeholder = "Registro OAB"
 
         tipo_input = 2
         document.querySelector('.input').value = ""
         document.querySelector('.matricula').value = ""
+
+        var iframe_popup = document.querySelector('.iframe_popup')
+        iframe_popup.src = `./pages/advogados.html`
 
         advogado_mostrar(data.lawer)
 

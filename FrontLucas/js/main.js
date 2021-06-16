@@ -5,7 +5,6 @@ var formData = $("form.cadast").serializeObject();
 console.log(formData);*/
 
 async function filtrar_aluno(nome){
-
     const response = await fetch(`http://${ip_back}:3000/aluno/getbyname/${nome}`) 
     const data = await response.json()
 

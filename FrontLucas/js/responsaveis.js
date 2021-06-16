@@ -14,6 +14,9 @@ async function respshowall(){
         document.querySelector('.input').value = ""
         document.querySelector('.matricula').value = ""        
 
+        var iframe_popup = document.querySelector('.iframe_popup')
+        iframe_popup.src = `./pages/responsaveis.html`
+
         responsavel_mostrar(data.sponsor, data_aluno.student)
 
     } catch (error) {

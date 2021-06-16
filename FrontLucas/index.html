@@ -35,30 +35,12 @@
 
         <input type="text" class="input" id="lname" name="lastname" placeholder="Nome">
 
-        <input data-modal-target="#popup" type="submit" onclick="abc()" value="Cadastrar"></input>
+        <input data-modal-target="#popup" type="submit" onclick="abrir()" value="Cadastrar"></input>
     </div>
 <!--------------------------------------------POPUP------------------------------------------------ -->
-
     <div class="popup" id="popup">
-        <div class="popup_cabeça">
-            <div class="popup_titulo">Cadastrar Novo Aluno</div>
-            <button data-close_popup class="close_popup" onclick="cba()">&times;</button>
-        </div>
-
-        <div class="content_popup">
-            <form action="http://localhost:3000/aluno/create" method="POST" enctype="application/json" class="cadast">
-                <input type="text" class="cadastrar_" name="matricula" placeholder="Matrícula">
-                <input type="text" class="" name="nome" placeholder="Nome Completo">
-                <input type="text" class="" name="" placeholder="Endereço">
-                <input type="text" class="" name="" placeholder="Nacionalidade">
-                <input type="text" class="" name="" placeholder="Estados">
-                <input type="text" class="" name="" placeholder="Cidade">
-                <input type="text" class="" name="" placeholder="Nascimento">
-                <input type="text" class="" name="" placeholder="Gênero">
-
-                <input type="submit" value="Cadastrar">
-            </form>
-        </div>
+        <iframe class="iframe_popup" src="./pages/alunos.html" width="500" height="500">
+        </iframe>
     </div>
     <div class="" id="overlay"></div>
 <!------------------------------------------------------------------------------------------------ -->
@@ -71,7 +53,7 @@
     
 </body>
 <script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/popup.js"></script>
+<script type="text/javascript" src="js/cadastrar.js"></script>
 <script type="text/javascript" src="js/aluno.js"></script>
 <script type="text/javascript" src="js/advogado.js"></script>
 <script type="text/javascript" src="js/responsaveis.js"></script>
