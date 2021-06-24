@@ -43,11 +43,12 @@ class AlunoController {
             console.log(id)
             const student = await Aluno.destroy({
                 where:{
-                    id:id
+                    id
                 }})
             res.status(200).json({student})
 
         } catch (error) {
+            console.log(error)
             res.json(error.errors[0].message)
         }
     }

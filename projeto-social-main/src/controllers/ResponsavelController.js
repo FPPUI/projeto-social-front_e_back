@@ -48,7 +48,7 @@ class ResponsavelController {
 
             const sponsor = await Responsavel.destroy({
                 where:{
-                    id
+                    aluno_id
                 }})
             res.status(200).json({sponsor})
 
