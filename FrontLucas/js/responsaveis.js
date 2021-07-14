@@ -12,10 +12,9 @@ async function respshowall(){
         
         tipo_input = 4
         document.querySelector('.input').value = ""
-        document.querySelector('.matricula').value = ""        
-
-        var iframe_popup = document.querySelector('.iframe_popup')
-        iframe_popup.src = `./pages/responsaveis.html`
+        document.querySelector('.matricula').value = ""
+        
+        carregar_popup(4)
 
         responsavel_mostrar(data.sponsor, data_aluno.student)
 
@@ -44,7 +43,21 @@ function responsavel_mostrar(sponsors, students){
                 <td>${sponsor.nacionalidade}</td>
                 <td>${sponsor.estado}</td>
                 <td>${sponsor.cidade}</td>
-                <td>${sponsor.nascimento}</td>
+                <td><input type="date" class="input_dados" id="sponsor_nascimento_${sponsor.aluno_id}" value="${sponsor.nascimento}"></td>
+                <td>${sponsor.trabalho_local}</td>
+            </tr>
+            `
+        } else {
+            linhas += `
+            <tr>
+                <td>Sem aluno vinculado</td>
+                <td>${sponsor.nome}</td>
+                <td>${sponsor.endereco}</td>
+                <td>${sponsor.telefone}</td>
+                <td>${sponsor.nacionalidade}</td>
+                <td>${sponsor.estado}</td>
+                <td>${sponsor.cidade}</td>
+                <td><input type="date" class="input_dados" id="sponsor_nascimento_${sponsor.aluno_id}" value="${sponsor.nascimento}"></td>
                 <td>${sponsor.trabalho_local}</td>
             </tr>
             `

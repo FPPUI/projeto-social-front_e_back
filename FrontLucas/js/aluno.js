@@ -1,3 +1,4 @@
+//import { carregar_popup } from "../pages/carry";
 var ip_back = "localhost"
 async function alunoshowall(){
     try {
@@ -12,8 +13,10 @@ async function alunoshowall(){
         document.querySelector('.input').value = ""
         document.querySelector('.matricula').value = ""
 
-        var iframe_popup = document.querySelector('.iframe_popup')
-        iframe_popup.src = `./pages/alunos.html`
+        carregar_popup(1)
+
+        //var iframe_popup = document.querySelector('.iframe_popup')
+        //iframe_popup.src = `./pages/alunos.html`
 
         aluno_mostrar(data.student)
 
@@ -26,7 +29,7 @@ function aluno_mostrar(users){
     let linhas1 = '';
     for(let user of users){
         linhas1 += `
-        <tr>
+        <tr id="aluno_${user.id}">
             <td><textarea class="input_dados" id="update_matricula_${user.id}">${user.matricula}</textarea></td>
             <td><textarea class="input_dados" id="update_nome_${user.id}">${user.nome}</textarea></td>
             <td><textarea class="input_dados" id="update_endereco_${user.id}">${user.endereco}</textarea></td>
@@ -91,9 +94,28 @@ async function aluno_atualizar(id){
           },
         mode: 'cors'
     });
+    document.getElementById(`aluno_${id}`).style.backgroundColor = "green"
+    setTimeout(() => {document.getElementById(`aluno_${id}`).style.backgroundColor = "#FFFFFF"}, 500);
+    
+
 }
 
 async function aluno_deletar(id){
-
-    await fetch(`http://${ip_back}:3000/aluno/delete/${id}`);
+    console.log(id)
+    await fetch(`http://${ip_back}:3000/responsavel/delete/${id}`, {
+        method: "DELETE",
+        headers: {
+            'Content-Type': 'application/json'
+          },
+        mode: 'cors'
+    });
+    
+    await fetch(`http://${ip_back}:3000/aluno/delete/${id}`, {
+        method: "DELETE",
+        headers: {
+            'Content-Type': 'application/json'
+          },
+        mode: 'cors'
+    });
+    
 }

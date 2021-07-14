@@ -45,10 +45,10 @@ class ResponsavelController {
     async deletar(req, res){
         try {
             const {id} = req.params
-
+            console.log(id)
             const sponsor = await Responsavel.destroy({
                 where:{
-                    aluno_id
+                    aluno_id:id
                 }})
             res.status(200).json({sponsor})
 

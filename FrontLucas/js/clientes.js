@@ -12,8 +12,7 @@ async function clienteshowall(){
         document.querySelector('.input').value = ""
         document.querySelector('.matricula').value = ""
 
-        var iframe_popup = document.querySelector('.iframe_popup')
-        iframe_popup.src = `./pages/clientes.html`
+        carregar_popup(3)
 
         cliente_mostrar(data.client, data_advogado.lawer)
 
@@ -32,6 +31,7 @@ function cliente_mostrar(clients, lawers){
                 registro_oab = lawer.registro_oab
             }
         }
+        
         linhas += `
         <tr>
             <td>${registro_oab}</td>
@@ -42,7 +42,7 @@ function cliente_mostrar(clients, lawers){
             <td>${client.rg}</td>
             <td>${client.telefone}</td>
             <td>${client.vara_criminal}</td>
-            <td>${formatar_data(client.data_acusacao)}</td>
+            <td><input type="date" class="input_dados" id="client_data_acusacao_${client.id}" value="${client.data_acusacao}"></td>
             <td>${client.informacoes_adicionais}</td>
         </tr>
         `

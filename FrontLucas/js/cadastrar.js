@@ -9,13 +9,13 @@ function abrir(){
 
 function fechar(){
     const overlay = document.getElementById('overlay')
-    const popup = document.getElementById('popup') // AQUI O ERROR O
+    const popup = document.getElementById('popup')
     popup.classList.remove('active')
     overlay.classList.remove('active')
     console.log("aaaA")
-} 
+}
 
-async function cadastrar(){
+async function cadastrar_aluno(){
 
     let campos = ['matricula', 'nome', 'endereco', 'nacionalidade', 'estado', 'cidade', 'nascimento', 'sexo']
     var registro_obtido = []

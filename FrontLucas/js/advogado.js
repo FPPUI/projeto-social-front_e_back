@@ -10,8 +10,7 @@ async function advogadoshowall(){
         document.querySelector('.input').value = ""
         document.querySelector('.matricula').value = ""
 
-        var iframe_popup = document.querySelector('.iframe_popup')
-        iframe_popup.src = `./pages/advogados.html`
+        carregar_popup(2)
 
         advogado_mostrar(data.lawer)
 
