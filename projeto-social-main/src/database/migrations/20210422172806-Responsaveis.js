@@ -8,16 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      aluno_id: {
-        type: Sequelize.INTEGER,
-        unique: true,
-        references: {
-          model: {
-            tableName: 'Alunos'
-          },
-          key: 'id'
-        },
-      },
       nome: {
         type: Sequelize.STRING(60),
       },
@@ -26,6 +16,12 @@ module.exports = {
       },
       telefone: {
         type: Sequelize.STRING(13)
+      },
+      cpf: {
+        type: Sequelize.STRING(11)
+      },
+      rg: {
+        type: Sequelize.STRING(15) //9
       },
       nacionalidade: {
         type: Sequelize.STRING(30)
@@ -37,10 +33,13 @@ module.exports = {
         type: Sequelize.STRING(150)
       },
       nascimento: {
-        type: Sequelize.DATE
+        type: Sequelize.STRING(10)
       },
       trabalho_local: {
-        type: Sequelize.STRING(255)
+        type: Sequelize.STRING(50)
+      },
+      dados_extras: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

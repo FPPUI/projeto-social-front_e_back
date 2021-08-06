@@ -7,9 +7,9 @@ class AdvogadoController {
         try {
             
             const {registro_oab, nome, endereco, telefone, email} = req.body
-
+            console.log({registro_oab, nome, endereco, telefone, email})
             const lawer = await Advogado.create({registro_oab, nome, endereco, telefone, email})
-    
+            console.log(lawer)
             res.status(201).json({lawer})
 
         } catch (error) {
@@ -23,7 +23,7 @@ class AdvogadoController {
             const {id} = req.params
             const {registro_oab, nome, endereco, telefone, email} = req.body
 
-            const lawer = await Advogado.update({nome, registro_oab,endereco, telefone, email}, {
+            const lawer = await Advogado.update({nome, registro_oab, endereco, telefone, email}, {
                 where:{
                     id
                 }})

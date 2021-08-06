@@ -21,6 +21,12 @@ module.exports = (sequelize, DataTypes) => {
     nome: {
       type: DataTypes.STRING(60)
     },
+    cpf_responsavel: {
+      type: DataTypes.STRING(11),
+    },
+    nome_responsavel: {
+      type: DataTypes.STRING(60),
+    },
     endereco: {
       type: DataTypes.STRING(100)
     },
@@ -41,6 +47,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     sexo: {
       type: DataTypes.STRING(9)
+    },
+    nis: {
+      type: DataTypes.STRING(11)
+    },
+    vacina: {
+      type: DataTypes.STRING(25) // Se tem ou não
+    },
+    bolsa_familia: {
+      type: DataTypes.STRING(25) // Se tem ou não
     },
     obs: {
       type: DataTypes.TEXT,

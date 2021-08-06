@@ -8,15 +8,8 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      advogado_id: {
-        type: Sequelize.INTEGER,
-        unique: true,
-        references: {
-          model: {
-            tableName: 'Advogados'
-          },
-          key: 'id'
-        },
+      registro_oab: {
+        type: Sequelize.STRING(60),
       },
       nome: {
         type: Sequelize.STRING(60),
@@ -28,10 +21,13 @@ module.exports = {
         type: Sequelize.STRING(11)
       },
       rg: {
-        type: Sequelize.STRING(9)
+        type: Sequelize.STRING(15) //9
       },
       telefone: {
         type: Sequelize.STRING(13)
+      },
+      email: {
+        type: Sequelize.STRING(100)
       },
       numero_processo: {
         type: Sequelize.STRING(20)
@@ -39,8 +35,8 @@ module.exports = {
       vara_criminal: {
         type: Sequelize.STRING(40)
       },
-      data_acusacao: {
-        type: Sequelize.DATE
+      data_ajuizamento: {
+        type: Sequelize.STRING(10)
       },
       informacoes_adicionais: {
         type: Sequelize.TEXT

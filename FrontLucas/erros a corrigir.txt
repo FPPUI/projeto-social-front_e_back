@@ -1,0 +1,7 @@
+aluno_deletar - Problema é que deleta o responsavel também - Solução desvincular eles
+aluno - adicionar os novos dados
+cliente_mostrar - colocar o registro_oab nele também, trocar data pra varchar
+responsavel - trocar data pra varchar
+
+front:
+responsavel - adicionar pesquisa por cpf

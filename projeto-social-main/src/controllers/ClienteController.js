@@ -8,9 +8,9 @@ class ClienteController {
     async cadastrar(req, res){
         try {
 
-            const {advogado_id, nome, endereco, cpf, rg, telefone, numero_processo, vara_criminal, data_acusacao, informacoes_adicionais} = req.body
+            const {registro_oab, nome, endereco, cpf, rg, telefone, email, numero_processo, vara_criminal, data_ajuizamento, informacoes_adicionais} = req.body
 
-            const client = await Cliente.create({advogado_id, nome, endereco, cpf, rg, telefone, numero_processo, vara_criminal, data_acusacao, informacoes_adicionais})
+            const client = await Cliente.create({registro_oab, nome, endereco, cpf, rg, telefone, email, numero_processo, vara_criminal, data_ajuizamento, informacoes_adicionais})
             res.status(201).json({client})
 
         } catch (error) {
@@ -23,19 +23,14 @@ class ClienteController {
 
             const {id} = req.params
 
-            const {advogado_id, nome, endereco, cpf, rg, telefone, numero_processo, vara_criminal, data_acusacao, informacoes_adicionais} = req.body
+            const {registro_oab, nome, endereco, cpf, rg, telefone, email, numero_processo, vara_criminal, data_ajuizamento, informacoes_adicionais} = req.body
 
-            const adv_id = await Advogado.findOne({where:{id: advogado_id}})
-
-            if (!adv_id) {  
-                res.json('Este id de advogado não existe')
-            } else {
-                const client = await Cliente.update({advogado_id, nome, endereco, cpf, rg, telefone, numero_processo, vara_criminal, data_acusacao, informacoes_adicionais},{
-                    where:{
-                        id
-                    }})
-                res.status(200).json({client})
-            }
+            const client = await Cliente.update({registro_oab, nome, endereco, cpf, rg, telefone, email, numero_processo, vara_criminal, data_ajuizamento, informacoes_adicionais},{
+                where:{
+                    id
+                }})
+            res.status(200).json({client})
+            
 
         } catch (error) {
             res.json(error.errors[0].message)

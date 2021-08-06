@@ -17,20 +17,20 @@
         </h1>
 
         <ul>
-			<li> <a href="#" onclick="alunoshowall()"> Aluno </a> </li>
-			<li> <a href="#" onclick="advogadoshowall()"> Advogados </a> </li>
-			<li> <a href="#" onclick="clienteshowall()"> Clientes </a> </li>
-			<li> <a href="#" onclick="respshowall()"> Responsaveis </a> </li>
+			<li> <a href="#" id="btn_aluno_mostrar" onclick="showall('aluno/showall', 'Consulta de Alunos', 'Matrícula', 1)"> Aluno </a> </li>
+			<li> <a href="#" id="btn_advogado_mostrar" onclick="showall('advogado/showall', 'Consulta de Advogados', 'Registro OAB', 2)"> Advogados </a> </li>
+			<li> <a href="#" id="btn_cliente_mostrar" onclick="showall('cliente/showall', 'Consulta de Clientes Jurídicos', 'Número do Processo', 3)"> Clientes </a> </li>
+			<li> <a href="#" id="btn_responsavel_mostrar" onclick="showall('responsavel/showall', 'Consulta de Responsáveis dos Alunos', 'CPF', 4)"> Responsaveis </a> </li>
 		</ul>
 
     </header>
 
     <div class="inicio-forms">
-        <p class="titulo_pag">Formulário de Consulta</p>
+        <p class="titulo_pag" hidden>Formulário de Consulta</p>
     </div>
 <!------------------------------------------------------------------------------------------------ -->
 
-    <div class="formulario">
+    <div class="formulario" hidden>
         <input type="text" class="matricula" id="fname" name="firstname" placeholder="Matrícula" style="margin-left:25%">
 
         <input type="text" class="input" id="lname" name="lastname" placeholder="Nome">
@@ -45,6 +45,15 @@
     <div class="" id="overlay"></div>
 <!------------------------------------------------------------------------------------------------ -->
 
+<!----------------------------POPUP DAS INFOS ADICIONAIS NA TABELA-------------------------------- -->
+    <div id="popup_lista">
+        <!--<iframe class="iframe_popup" src="./pages/alunos.html" width="500" height="500">
+        </iframe>-->
+    </div>
+    <div class="" id="overlay_lista"></div>
+<!------------------------------------------------------------------------------------------------ -->
+
+
     <div class="tabela-container">
         <table class="tabela">
         </table>
@@ -55,11 +64,13 @@
 <script type="text/javascript" src="pages/carry.js"></script>
 <script type="text/javascript" src="pages/suport.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/cadastrar.js"></script>
+<script type="text/javascript" src="js/popup.js"></script>
+<script type="text/javascript" src="js/classes.js"></script>
 <script type="text/javascript" src="js/aluno.js"></script>
 <script type="text/javascript" src="js/advogado.js"></script>
 <script type="text/javascript" src="js/responsaveis.js"></script>
 <script type="text/javascript" src="js/clientes.js"></script>
+
 
 <script></script>
 </html>

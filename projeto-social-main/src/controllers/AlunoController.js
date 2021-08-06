@@ -6,9 +6,9 @@ class AlunoController {
     async cadastrar(req, res){
         try {
             console.log(req.body)
-            const {matricula, nome, endereco, telefone, nacionalidade, estado, cidade, nascimento, sexo, obs} = req.body
+            const {matricula, cpf_responsavel, nome_responsavel, nome, endereco, telefone, nacionalidade, estado, cidade, nascimento, sexo, nis, vacina, bolsa_familia, obs} = req.body
 
-            const student = await Aluno.create({matricula, nome, endereco, telefone, nacionalidade, estado, cidade, nascimento, sexo, obs})
+            const student = await Aluno.create({matricula, cpf_responsavel, nome_responsavel, nome, endereco, telefone, nacionalidade, estado, cidade, nascimento, sexo, nis, vacina, bolsa_familia, obs})
             
             res.status(201).json({student})
 
@@ -22,9 +22,9 @@ class AlunoController {
 
             const {id} = req.params
             console.log(req.params)
-            const {matricula, nome, endereco, telefone, nacionalidade, estado, cidade, nascimento, sexo, obs} = req.body
+            const {matricula, cpf_responsavel, nome_responsavel, nome, endereco, telefone, nacionalidade, estado, cidade, nascimento, sexo, nis, vacina, bolsa_familia, obs} = req.body
             console.log(req.body)
-            const student = await Aluno.update({matricula, nome, endereco, telefone, nacionalidade, estado, cidade, nascimento, sexo, obs},
+            const student = await Aluno.update({matricula, cpf_responsavel, nome_responsavel, nome, endereco, telefone, nacionalidade, estado, cidade, nascimento, sexo, nis, vacina, bolsa_familia, obs},
                 {where:{
                     id
                 }})

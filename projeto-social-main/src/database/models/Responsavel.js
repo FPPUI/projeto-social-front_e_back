@@ -15,10 +15,6 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    aluno_id: {
-      type: DataTypes.STRING(25),
-      unique: true
-    },
     nome: {
       type: DataTypes.STRING(60),
     },
@@ -27,6 +23,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     telefone: {
       type: DataTypes.STRING(13)
+    },
+    cpf: {
+      type: DataTypes.STRING(11)
+    },
+    rg: {
+      type: DataTypes.STRING(15) //9
     },
     nacionalidade: {
       type: DataTypes.STRING(30)
@@ -41,8 +43,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE
     },
     trabalho_local: {
-      type: DataTypes.STRING(255)
-    }
+      type: DataTypes.STRING(50)
+    },
+    dados_extras: {
+      type: DataTypes.TEXT
+    },
   }, {
     sequelize,
     modelName: 'Responsaveis',

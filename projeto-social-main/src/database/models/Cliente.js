@@ -15,9 +15,8 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    advogado_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+    registro_oab: {
+      type: DataTypes.STRING(60),
     },
     nome: {
       type: DataTypes.STRING(60),
@@ -34,14 +33,17 @@ module.exports = (sequelize, DataTypes) => {
     telefone: {
       type: DataTypes.STRING(13)
     },
+    email: {
+      type: DataTypes.STRING(100)
+    },
     numero_processo: {
       type: DataTypes.STRING(20)
     },
     vara_criminal: {
       type: DataTypes.STRING(40)
     },
-    data_acusacao: {
-      type: DataTypes.DATE
+    data_ajuizamento: {
+      type: DataTypes.STRING(10)
     },
     informacoes_adicionais: {
       type: DataTypes.TEXT

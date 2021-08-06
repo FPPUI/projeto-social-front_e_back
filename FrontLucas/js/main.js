@@ -7,8 +7,9 @@ console.log(formData);*/
 async function filtrar_aluno(nome){
     const response = await fetch(`http://${ip_back}:3000/aluno/getbyname/${nome}`) 
     const data = await response.json()
-
-    document.querySelector('.titulo_pag').innerHTML = "Consulta de Alunos"
+    
+    
+    //document.querySelector('.titulo_pag').innerHTML = "Consulta de Alunos"
     aluno_mostrar(data.student)
 }
 
@@ -16,31 +17,31 @@ async function filtrar_advogado(nome){
 
     const response = await fetch(`http://${ip_back}:3000/advogado/getbyname/${nome}`) 
     const data = await response.json()
-
-    document.querySelector('.titulo_pag').innerHTML = "Consulta de Advogados"
+    //document.querySelector('.titulo_pag').innerHTML = "Consulta de Advogados"
     advogado_mostrar(data.lawer)
 }
 
 async function filtrar_cliente(nome){
 
     const response = await fetch(`http://${ip_back}:3000/cliente/getbyname/${nome}`) 
-    const response_advogado = await fetch(`http://${ip_back}:3000/advogado/showall`)
+    //const response_advogado = await fetch(`http://${ip_back}:3000/advogado/showall`)
     const data = await response.json()
-    const data_advogado = await response_advogado.json()
+    //const data_advogado = await response_advogado.json()
 
-    document.querySelector('.titulo_pag').innerHTML = "Consulta de Clientes Jurídicos"
-    cliente_mostrar(data.client, data_advogado.lawer)
+
+    //document.querySelector('.titulo_pag').innerHTML = "Consulta de Clientes Jurídicos"
+    cliente_mostrar(data.client) //, data_advogado.lawer
 }
 
 async function filtrar_resp(nome){
 
     const response = await fetch(`http://${ip_back}:3000/responsavel/getbyname/${nome}`) 
-    const response_aluno = await fetch(`http://${ip_back}:3000/aluno/showall`)
+    //const response_aluno = await fetch(`http://${ip_back}:3000/aluno/showall`)
     const data = await response.json()
-    const data_aluno = await response_aluno.json()
+    //const data_aluno = await response_aluno.json()
 
-    document.querySelector('.titulo_pag').innerHTML = "Consulta de Responsáveis dos Alunos"
-    responsavel_mostrar(data.sponsor, data_aluno.student)
+    //document.querySelector('.titulo_pag').innerHTML = "Consulta de Responsáveis dos Alunos"
+    responsavel_mostrar(data.sponsor) //, data_aluno.student
 }
 
 //------------------------------------------------------------------------------------------//
@@ -50,8 +51,8 @@ async function filtrar_aluno_matricula(nome){
     const response = await fetch(`http://${ip_back}:3000/aluno/getbymatricula/${nome}`) 
     const data = await response.json()
 
-    document.querySelector('.matricula').placeholder = "Matrícula"
-    document.querySelector('.titulo_pag').innerHTML = "Consulta de Alunos"
+    //document.querySelector('.matricula').placeholder = "Matrícula"
+    //document.querySelector('.titulo_pag').innerHTML = "Consulta de Alunos"
     aluno_mostrar(data.student)
 }
 
@@ -59,34 +60,32 @@ async function filtrar_advogado_matricula(nome){
 
     const response = await fetch(`http://${ip_back}:3000/advogado/getbyoab/${nome}`) 
     const data = await response.json()
-
-    document.querySelector('.matricula').placeholder = "Registro OAB"
-    document.querySelector('.titulo_pag').innerHTML = "Consulta de Advogados"
+    //document.querySelector('.matricula').placeholder = "Registro OAB"
+    //document.querySelector('.titulo_pag').innerHTML = "Consulta de Advogados"
     advogado_mostrar(data.lawer)
 }
 
 async function filtrar_cliente_matricula(nome){
 
     const response = await fetch(`http://${ip_back}:3000/cliente/getbyprocesso/${nome}`) 
-    const response_advogado = await fetch(`http://${ip_back}:3000/advogado/showall`)
+    //const response_advogado = await fetch(`http://${ip_back}:3000/advogado/showall`)
     const data = await response.json()
-    const data_advogado = await response_advogado.json()
-
-    document.querySelector('.matricula').placeholder = "Número do Processo"
-    document.querySelector('.titulo_pag').innerHTML = "Consulta de Clientes Jurídicos"
-    cliente_mostrar(data.client, data_advogado.lawer)
+    //const data_advogado = await response_advogado.json()
+    //document.querySelector('.matricula').placeholder = "Número do Processo"
+    //document.querySelector('.titulo_pag').innerHTML = "Consulta de Clientes Jurídicos"
+    cliente_mostrar(data.client) //, data_advogado.lawer
 }
 
 async function filtrar_resp_matricula(nome){
 
-    const response = await fetch(`http://${ip_back}:3000/aluno/getbymatricula/${nome}`)
-    const response_resp = await fetch(`http://${ip_back}:3000/responsavel/showall`)
-    const data = await response.json()
+    //const response = await fetch(`http://${ip_back}:3000/aluno/getbymatricula/${nome}`)
+    const response_resp = await fetch(`http://${ip_back}:3000/responsavel/getbycpf/${nome}`)
+    //const data = await response.json()
     const data_resp = await response_resp.json()
 
-    document.querySelector('.matricula').placeholder = "Matrícula"
-    document.querySelector('.titulo_pag').innerHTML = "Consulta de Responsáveis dos Alunos"
-    responsavel_mostrar(data_resp.sponsor, data.student, nome)
+    //document.querySelector('.matricula').placeholder = "Matrícula"
+    //document.querySelector('.titulo_pag').innerHTML = "Consulta de Responsáveis dos Alunosaaaaaa"
+    responsavel_mostrar(data_resp.sponsor) //, data.student, nome
 }
 
 let timer = null
@@ -99,6 +98,14 @@ function soltar_tecla(evento){
         if (conteudo_input == ""){
             conteudo_input = "*"
         }
+
+        if(conteudo_input != "*"){
+            document.querySelector(`.matricula`).disabled = true
+        } else {
+            document.querySelector(`.matricula`).disabled = false
+        }
+        
+
         if(tipo_input == 1){
             filtrar_aluno(conteudo_input)
         }else if(tipo_input == 2){
@@ -120,6 +127,13 @@ function soltar_matricula(evento){
         if (conteudo_input == ""){
             conteudo_input = "*"
         }
+
+        if(conteudo_input != "*"){
+            document.querySelector(`.input`).disabled = true
+        } else {
+            document.querySelector(`.input`).disabled = false
+        }
+
         if(tipo_input == 1){
             filtrar_aluno_matricula(conteudo_input)
         }else if(tipo_input == 2){
@@ -150,7 +164,7 @@ function formatar_data(data){
         return nascimento;
     }
 }
-*/
+
 function formatar_data(data){
     if(data == null || data == undefined){
         return "Nulo" 
@@ -176,13 +190,13 @@ function formatar_data(data){
             day: '2-digit',
             month: '2-digit',
             year: 'numeric',
-        });*/
+        });*****
         // Erro nas datas 30/?? ou 01/??, descendo um dia EM TODAS, ARRUME OU MORRA
         
         console.log(nascimento)
         return nascimento;
     }
 }
-
+*/
 
 

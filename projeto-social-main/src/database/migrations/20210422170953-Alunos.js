@@ -15,6 +15,12 @@ module.exports = {
       nome: {
         type: Sequelize.STRING(60),
       },
+      cpf_responsavel: {
+        type: Sequelize.STRING(11),
+      },
+      nome_responsavel: {
+        type: Sequelize.STRING(60),
+      },
       endereco: {
         type: Sequelize.STRING(100)
       },
@@ -36,6 +42,15 @@ module.exports = {
       sexo: {
         type: Sequelize.STRING(9)
       },
+      nis: {
+        type: Sequelize.STRING(11)
+      },
+      vacina: {
+        type: Sequelize.STRING(25) // Se tem ou não
+      },
+      bolsa_familia: {
+        type: Sequelize.STRING(25) // Se tem ou não
+      },
       obs: {
         type: Sequelize.TEXT,
       },
@@ -46,7 +61,8 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      } // add nis, nº cartão da vacina(se tem ou não o cartão), bolsa familia, telefone do responsável, Estado + cidade , cadastro de ...(cnis?)
+    
     });
   },
   down: async (queryInterface, Sequelize) => {
