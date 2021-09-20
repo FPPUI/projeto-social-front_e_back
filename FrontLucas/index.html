@@ -7,6 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/popup.css">
+    <link rel="stylesheet" href="styles/stylecorrections.css">
 	<title>Aluno</title>
 </head>
 <body>
@@ -36,13 +37,14 @@
         <input type="text" class="input" id="lname" name="lastname" placeholder="Nome">
 
         <input data-modal-target="#popup" type="submit" onclick="abrir()" value="Cadastrar"></input>
+        <!--<input type="submit" onclick="exportar()" value="Exportar"></input>-->
     </div>
 <!--------------------------------------------POPUP------------------------------------------------ -->
     <div class="popup" id="popup">
         <!--<iframe class="iframe_popup" src="./pages/alunos.html" width="500" height="500">
         </iframe>-->
     </div>
-    <div class="" id="overlay"></div>
+    <div class="" id="overlay" onclick="fechar()"></div>
 <!------------------------------------------------------------------------------------------------ -->
 
 <!----------------------------POPUP DAS INFOS ADICIONAIS NA TABELA-------------------------------- -->
@@ -50,7 +52,7 @@
         <!--<iframe class="iframe_popup" src="./pages/alunos.html" width="500" height="500">
         </iframe>-->
     </div>
-    <div class="" id="overlay_lista"></div>
+    <div class="" id="overlay_lista" onclick="fechar_lista()"></div>
 <!------------------------------------------------------------------------------------------------ -->
 
 

@@ -25,13 +25,22 @@ function abrir_lista(identificador){
     console.log("ASAFWSFA")
 }
 
-function fechar_lista(identificador){
+function fechar_lista(){
+    const overlay_lista = document.getElementById('overlay_lista')
+    const popup_listas = document.getElementsByClassName(`popup`)
+    for(let cont=1; cont < popup_listas.length; cont++){
+        popup_listas[cont].classList.remove('active')
+        overlay_lista.classList.remove('active')
+    }
+    console.log("aaaA")
+}
+
+function fechar_listas(identificador){
     const overlay_lista = document.getElementById('overlay_lista')
     const popup_lista = document.getElementById(`popup_lista_${identificador}`)
     popup_lista.classList.remove('active')
     overlay_lista.classList.remove('active')
     console.log("aaaA")
 }
-
 
 

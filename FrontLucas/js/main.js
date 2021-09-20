@@ -1,11 +1,42 @@
 var tipo_input;
 var ip_back = "localhost" //"26.202.5.175"
+var port = 5000
 /*
 var formData = $("form.cadast").serializeObject();
 console.log(formData);*/
 
+
+async function exportar(){
+    console.log(escolha_tudo)
+    switch(escolha_tudo){
+        case 1:
+            var response = await fetch(`http://${ip_back}:${port}/export_student`) 
+            
+            break;
+        case 2:
+            var response = await fetch(`http://${ip_back}:${port}/export_lawer`) 
+            
+            break;
+        case 3:
+            var response = await fetch(`http://${ip_back}:${port}/export_client`) 
+            
+            break;
+        case 4:
+            var response = await fetch(`http://${ip_back}:${port}/export_sponsor`) 
+
+            break;
+    }
+    //const response = await fetch(`http://${ip_back}:${port}/exportar`) 
+    
+    
+    
+    //document.querySelector('.titulo_pag').innerHTML = "Consulta de Alunos"
+
+}
+
+
 async function filtrar_aluno(nome){
-    const response = await fetch(`http://${ip_back}:3000/aluno/getbyname/${nome}`) 
+    const response = await fetch(`http://${ip_back}:${port}/aluno/getbyname/${nome}`) 
     const data = await response.json()
     
     
@@ -15,7 +46,7 @@ async function filtrar_aluno(nome){
 
 async function filtrar_advogado(nome){
 
-    const response = await fetch(`http://${ip_back}:3000/advogado/getbyname/${nome}`) 
+    const response = await fetch(`http://${ip_back}:${port}/advogado/getbyname/${nome}`) 
     const data = await response.json()
     //document.querySelector('.titulo_pag').innerHTML = "Consulta de Advogados"
     advogado_mostrar(data.lawer)
@@ -23,8 +54,8 @@ async function filtrar_advogado(nome){
 
 async function filtrar_cliente(nome){
 
-    const response = await fetch(`http://${ip_back}:3000/cliente/getbyname/${nome}`) 
-    //const response_advogado = await fetch(`http://${ip_back}:3000/advogado/showall`)
+    const response = await fetch(`http://${ip_back}:${port}/cliente/getbyname/${nome}`) 
+    //const response_advogado = await fetch(`http://${ip_back}:${port}/advogado/showall`)
     const data = await response.json()
     //const data_advogado = await response_advogado.json()
 
@@ -35,8 +66,8 @@ async function filtrar_cliente(nome){
 
 async function filtrar_resp(nome){
 
-    const response = await fetch(`http://${ip_back}:3000/responsavel/getbyname/${nome}`) 
-    //const response_aluno = await fetch(`http://${ip_back}:3000/aluno/showall`)
+    const response = await fetch(`http://${ip_back}:${port}/responsavel/getbyname/${nome}`) 
+    //const response_aluno = await fetch(`http://${ip_back}:${port}/aluno/showall`)
     const data = await response.json()
     //const data_aluno = await response_aluno.json()
 
@@ -48,7 +79,7 @@ async function filtrar_resp(nome){
 
 async function filtrar_aluno_matricula(nome){
 
-    const response = await fetch(`http://${ip_back}:3000/aluno/getbymatricula/${nome}`) 
+    const response = await fetch(`http://${ip_back}:${port}/aluno/getbymatricula/${nome}`) 
     const data = await response.json()
 
     //document.querySelector('.matricula').placeholder = "Matrícula"
@@ -58,7 +89,7 @@ async function filtrar_aluno_matricula(nome){
 
 async function filtrar_advogado_matricula(nome){
 
-    const response = await fetch(`http://${ip_back}:3000/advogado/getbyoab/${nome}`) 
+    const response = await fetch(`http://${ip_back}:${port}/advogado/getbyoab/${nome}`) 
     const data = await response.json()
     //document.querySelector('.matricula').placeholder = "Registro OAB"
     //document.querySelector('.titulo_pag').innerHTML = "Consulta de Advogados"
@@ -67,8 +98,8 @@ async function filtrar_advogado_matricula(nome){
 
 async function filtrar_cliente_matricula(nome){
 
-    const response = await fetch(`http://${ip_back}:3000/cliente/getbyprocesso/${nome}`) 
-    //const response_advogado = await fetch(`http://${ip_back}:3000/advogado/showall`)
+    const response = await fetch(`http://${ip_back}:${port}/cliente/getbyprocesso/${nome}`) 
+    //const response_advogado = await fetch(`http://${ip_back}:${port}/advogado/showall`)
     const data = await response.json()
     //const data_advogado = await response_advogado.json()
     //document.querySelector('.matricula').placeholder = "Número do Processo"
@@ -78,8 +109,8 @@ async function filtrar_cliente_matricula(nome){
 
 async function filtrar_resp_matricula(nome){
 
-    //const response = await fetch(`http://${ip_back}:3000/aluno/getbymatricula/${nome}`)
-    const response_resp = await fetch(`http://${ip_back}:3000/responsavel/getbycpf/${nome}`)
+    //const response = await fetch(`http://${ip_back}:${port}/aluno/getbymatricula/${nome}`)
+    const response_resp = await fetch(`http://${ip_back}:${port}/responsavel/getbycpf/${nome}`)
     //const data = await response.json()
     const data_resp = await response_resp.json()
 

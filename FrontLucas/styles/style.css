@@ -117,7 +117,7 @@ a {
 }
 
 .tabela input[type=button]{
-    width: 120px;
+    width: 160px;
     background-color: #008dc0;
     color: white;
     padding: 14px 20px;
@@ -127,7 +127,7 @@ a {
     cursor: pointer;
     
 }
-
+/*
 textarea{
     width: 300px;
     padding: 12px 20px;
@@ -136,9 +136,7 @@ textarea{
     border-radius: 4px;
     box-sizing: border-box;
     text-align: center;
-
-    
-}
+}*/
 
 input[type=text] {
   width: 300px;
@@ -157,7 +155,7 @@ input[type=text] {
     border-radius: 4px;
     box-sizing: border-box;
     text-align: center;
-  }
+}
 
 input[type=text]:first-child {
     margin: 0px;

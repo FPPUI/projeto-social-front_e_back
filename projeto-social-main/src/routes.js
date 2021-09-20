@@ -14,6 +14,7 @@ const responsavel_controller = new cadastro_responsavel()
 const cadastro_juridico = require('./controllers/ClienteController').default
 const juridico_controller = new cadastro_juridico()
 
+
  
 router.get('/advogado/showall', advogado_controller.showall)
 router.get('/advogado/showbyid/:id', advogado_controller.showbyid)
@@ -50,5 +51,9 @@ router.post('/cliente/create', juridico_controller.cadastrar)
 router.put('/cliente/edit/:id', juridico_controller.editar)
 router.delete('/cliente/delete/:id', juridico_controller.deletar)
 
+//router.get('/export_student', estudantes_controller.export)
+//router.get('/export_lawer', advogado_controller.export)
+//router.get('/export_client', juridico_controller.export)
+//router.get('/export_sponsor', responsavel_controller.export)
 
 module.exports = router

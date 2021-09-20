@@ -22,10 +22,18 @@ function advogado_mostrar(lawers){
             </div>
 
             <div class="content_popup">
+                <div class="update_div">
+                <label>Registro OAB</label>
                 <textarea class="input_dados" id="update_registro_oab_${lawer.id}" value="${lawer.registro_oab}">${lawer.registro_oab}</textarea>
+                <label>Nome</label>
                 <textarea class="input_dados" id="update_nome_${lawer.id}" value="${lawer.nome}">${lawer.nome}</textarea>
+                <label>Endereço</label>
                 <textarea class="input_dados" id="update_endereco_${lawer.id}" value="${lawer.endereco}">${lawer.endereco}</textarea>
+                <label>Telefone</label>
                 <textarea class="input_dados" id="update_telefone_${lawer.id}" value="${lawer.telefone}">${lawer.telefone}</textarea>
+                </div>
+                <div class="update_div" id="update_div_2">
+                <label>Email</label>
                 <textarea class="input_dados" id="update_email_${lawer.id}" value="${lawer.email}">${lawer.email}</textarea>
                 <input type="button" onclick="atualizar(
                     ${lawer.id},
@@ -34,6 +42,7 @@ function advogado_mostrar(lawers){
                     2
                     )" value="Atualizar"></button>
                 <input type="button" onclick="deletar(${lawer.id}, 'advogado/delete', 2)" value="Deletar"></button>
+                </div>
             </div>
         </div>
         `

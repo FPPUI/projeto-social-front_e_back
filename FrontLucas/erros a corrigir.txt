@@ -5,3 +5,9 @@ responsavel - trocar data pra varchar
 
 front:
 responsavel - adicionar pesquisa por cpf
+
+
+
+
+NOVOS ERROS:
+botão e input de cadastros - sem formatação

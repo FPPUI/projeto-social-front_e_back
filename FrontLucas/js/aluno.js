@@ -38,18 +38,43 @@ function aluno_mostrar(users){
                 <button data-close_popup class="close_popup" onclick="fechar_lista(${user.id})">&times;</button>
             </div>
             <form method="POST" enctype="application/json" class="cadast">
-            <div class="content_popup">
+            <div class="content_popup" id="update_popup">
+                <div class="update_div">
+                <label>Matrícula</label>
                 <textarea class="input_dados" id="update_matricula_${user.id}" value="${user.matricula}">${user.matricula}</textarea>
+                
+                <label>Nome</label>
                 <textarea class="input_dados" id="update_nome_${user.id}" value="${user.nome}">${user.nome}</textarea>
+                
+                <label>CPF do Responsável</label>
                 <textarea class="input_dados" id="update_cpf_responsavel_${user.id}" value="${user.cpf_responsavel}">${user.cpf_responsavel}</textarea>
+                
+                <label>Nome do Responsável</label>
                 <textarea class="input_dados" id="update_nome_responsavel_${user.id}" value="${user.nome_responsavel}">${user.nome_responsavel}</textarea>
+                
+                <label>Endereço</label>
                 <textarea class="input_dados" id="update_endereco_${user.id}" value="${user.endereco}">${user.endereco}</textarea>
+                
+                <label>Nacionalidade</label>
                 <textarea class="input_dados" id="update_nacionalidade_${user.id}" value="${user.nacionalidade}">${user.nacionalidade}</textarea>
+                
+                <label>Estado</label>
                 <textarea class="input_dados" id="update_estado_${user.id}" value="${user.estado}">${user.estado}</textarea>
+                
+                <label>Cidade</label>
                 <textarea class="input_dados" id="update_cidade_${user.id}" value="${user.cidade}">${user.cidade}</textarea>
+                
+                <label>Nascimento</label>
                 <input type="date" class="input_dados" id="update_nascimento_${user.id}" value="${user.nascimento}">
+                </div>
+                <div class="update_div" id="update_div_2">
+                <label>Gênero</label>
                 <textarea class="input_dados" id="update_sexo_${user.id}" value="${user.sexo}">${user.sexo}</textarea>
+                
+                <label>Numero do NIS</label>
                 <textarea class="input_dados" id="update_nis_${user.id}" value="${user.nis}">${user.nis}</textarea>
+                
+                
                 <label for="vacina">Cartão de Vacina</label>
                 <select class="input_dados" id="update_vacina_${user.id}">
                     <option value="Tem" ${selected_vacina1}>Tem</option>
@@ -60,8 +85,9 @@ function aluno_mostrar(users){
                     <option value="Tem" ${selected_bolsa_familia1}>Tem</option>
                     <option value="Não Tem" ${selected_bolsa_familia2}>Não Tem</option>
                 </select>
+                <label>Observações</label>
                 <textarea class="input_dados" id="update_obs_${user.id}" value="${user.obs}">${user.obs}</textarea>
-
+                
                 <input type="button" onclick="atualizar(
                     ${user.id},
                     ['matricula', 'nome', 'cpf_responsavel', 'nome_responsavel', 'endereco', 'nacionalidade', 'estado', 'cidade', 'nascimento', 'sexo', 'nis', 'vacina', 'bolsa_familia', 'obs'],
@@ -69,6 +95,7 @@ function aluno_mostrar(users){
                     1
                     )" value="Atualizar"></button>
                 <input type="button" onclick="deletar(${user.id}, 'aluno/delete', 1)" value="Deletar"></button>
+                </div>
                 </form>
             </div>
         </div>

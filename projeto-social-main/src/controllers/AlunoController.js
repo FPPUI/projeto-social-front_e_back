@@ -53,10 +53,12 @@ class AlunoController {
 
     async showall(req, res){
         try{
+            
             const student = await Aluno.findAll()
-
+            console.log(student)
             res.status(200).json({student})
         } catch (error) {
+            console.log(error)
             res.json(error.errors[0].message)
         }
     }
@@ -120,6 +122,19 @@ class AlunoController {
         }
 
     }
+
+    async export(req, res){
+        try{
+            
+            const student = await Aluno.findAll()
+            
+            console.log(student[0].dataValues.id)
+            //res.status(200).json({student})
+        } catch (error) {
+            res.json(error.errors[0].message)
+        }
+    }
+
 }
 
 exports.default = AlunoController
