@@ -1,4 +1,4 @@
-var ip_back = "localhost"
+
 function abrir(){
     const overlay = document.getElementById('overlay')
     const popup = document.getElementById('popup')

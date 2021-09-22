@@ -1,6 +1,4 @@
 var tipo_input;
-var ip_back = "localhost" //"26.202.5.175"
-var port = 5000
 /*
 var formData = $("form.cadast").serializeObject();
 console.log(formData);*/

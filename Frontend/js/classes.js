@@ -1,12 +1,10 @@
 //import { carregar_popup } from "../pages/carry";
-var ip_back = "localhost"
-var port = 5000
+
 var registro_obtido = {}
 var escolha_tudo;
 
 async function showall(fetch_config_listar, pesquisa_titulo_pag, pesquisa_matricula, escolha){
     try {
-        var ip_back = "localhost"
         const response = await fetch(`http://${ip_back}:${port}/${fetch_config_listar}`) // aluno/showall
         const data = await response.json()
 
