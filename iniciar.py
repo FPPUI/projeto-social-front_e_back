@@ -1,8 +1,8 @@
 import os
 
-path = os.path.abspath("iniciar.py")
-path = path.replace("\\","/")
-path = path.replace("dist/iniciar/iniciar.py","Frontend/index.html")
+path = os.path.abspath("iniciar.exe")
+path = path.replace("\\", "/")
+path = path.replace("dist/iniciar/iniciar.exe","Frontend/index.html")
 print(path)
 
 os.system('start ' + path)
